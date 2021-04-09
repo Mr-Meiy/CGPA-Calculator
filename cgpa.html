@@ -24,7 +24,7 @@ function calculateCGPA() {
 	}
 	else {
 		gradeSum=g1+g2+g3+g4+g5+g6+g7;
-		cgpaResult=gradeSum/7;
+		cgpaResult=Number(gradeSum/7);
 
 		//alert(cgpaResult.toFixed(2))
 		document.getElementById("result1").innerText=cgpaResult.toFixed(2);
