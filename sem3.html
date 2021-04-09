@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GPA-SEM 3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="https://lh3.googleusercontent.com/ogw/ADGmqu9y-u-sZQDxQftIxdP575cFrpQ4XbETG5_iSayMYQ=s32-c-mo">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<script type="text/javascript">
+var c1=4,c2=3,c3=3,c4=4,c5=3,c6=3,c7=2,c8=2,c9=2;
+var g1,g2,g3,g4,g5,g6,g7,g8,g9;
+var creditSum,gradeSum,gpaResult;
+
+function calculateGPA() {
+	var a1= document.getElementById("g1");
+	g1=a1.options[a1.selectedIndex].value;
+	var a2= document.getElementById("g2");
+	g2=a2.options[a2.selectedIndex].value;
+	var a3= document.getElementById("g3");
+	g3=a3.options[a3.selectedIndex].value;
+	var a4= document.getElementById("g4");
+	g4=a4.options[a4.selectedIndex].value;
+	var a5= document.getElementById("g5");
+	g5=a5.options[a5.selectedIndex].value;
+	var a6= document.getElementById("g6");
+	g6=a6.options[a6.selectedIndex].value;
+	var a7= document.getElementById("g7");
+	g7=a7.options[a7.selectedIndex].value;
+	var a8= document.getElementById("g8");
+	g8=a8.options[a8.selectedIndex].value;
+	var a9= document.getElementById("g9");
+	g9=a9.options[a9.selectedIndex].value;
+
+	if(g1==-1 || g2==-1 || g3==-1 || g4==-1 || g5==-1 || g6==-1 || g7==-1 || g8==-1 || g9==-1) {
+		alert("Please fill all the details")
+	}
+	else {
+		creditSum=c1+c2+c3+c4+c5+c6+c7+c8+c9;
+		gradeSum=(c1*g1)+(c2*g2)+(c3*g3)+(c4*g4)+(c5*g5)+(c6*g6)+(c7*g7)+(c8*g8)+(c9*g9);
+		gpaResult=gradeSum/creditSum;
+
+		//alert(gpaResult.toFixed(2))
+		document.getElementById("result1").innerText=gpaResult.toFixed(2);
+		var res=document.getElementById("result2")
+		res.classList.add("alert")
+		res.classList.add("alert-success")
+		document.getElementById("result2").innerText="Congratulations!! Your GPA is "+gpaResult.toFixed(2);
+	}
+}
+</script>
+</head>
+<body>
+	<div class="container-fluid bg-primary">
+		<h1 class="text-white p-2">Semester-3</h1>
+	</div>
+	<div class="container">
+		<table class="table table-sm table-striped table-bordered text-center rounded">
+			<thead class="bg-primary text-white">
+				<tr style="height: 35px !important;">
+					<th scope="col">COURSE</th>
+					<th scope="col">GRADE</th>
+				</tr>
+			</thead>
+			<tbody >
+				<tr>
+					<td>
+						Boundary Value Problems and Transform Methods
+					</td>
+					<td>
+						<select id="g1" class="form-control form-control-sm">
+							<option value="-1">--Select--</option>
+							<option value="10">O</option>
+    						<option value="9">A+</option>
+    						<option value="8">A</option>
+    						<option value="7">B+</option>
+    						<option value="6">B</option>
+    						<option value="5">C</option>
+    						<option value="0">F</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Data Structures
+					</td>
+					<td>
+						<select id="g2" class="form-control form-control-sm">
+							<option value="-1">--Select--</option>
+							<option value="10">O</option>
+    						<option value="9">A+</option>
+    						<option value="8">A</option>
+    						<option value="7">B+</option>
+    						<option value="6">B</option>
+    						<option value="5">C</option>
+    						<option value="0">F</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Object Oriented Programming
+					</td>
+					<td>
+						<select id="g3" class="form-control form-control-sm">
+							<option value="-1">--Select--</option>
+							<option value="10">O</option>
+    						<option value="9">A+</option>
+    						<option value="8">A</option>
+    						<option value="7">B+</option>
+    						<option value="6">B</option>
+    						<option value="5">C</option>
+    						<option value="0">F</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Digital Principles and System Design 
+					</td>
+					<td>
+						<select id="g4" class="form-control form-control-sm">
+							<option value="-1">--Select--</option>
+							<option value="10">O</option>
+    						<option value="9">A+</option>
+    						<option value="8">A</option>
+    						<option value="7">B+</option>
+    						<option value="6">B</option>
+    						<option value="5">C</option>
+    						<option value="0">F</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Electronic Devices and Circuits
+					</td>
+					<td>
+						<select id="g5" class="form-control form-control-sm">
+							<option value="-1">--Select--</option>
+							<option value="10">O</option>
+    						<option value="9">A+</option>
+    						<option value="8">A</option>
+    						<option value="7">B+</option>
+    						<option value="6">B</option>
+    						<option value="5">C</option>
+    						<option value="0">F</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Software Engineering
+					</td>
+					<td>
+						<select id="g6" class="form-control form-control-sm">
+							<option value="-1">--Select--</option>
+							<option value="10">O</option>
+    						<option value="9">A+</option>
+    						<option value="8">A</option>
+    						<option value="7">B+</option>
+    						<option value="6">B</option>
+    						<option value="5">C</option>
+    						<option value="0">F</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Data Structures Laboratory
+					</td>
+					<td>
+						<select id="g7" class="form-control form-control-sm">
+							<option value="-1">--Select--</option>
+							<option value="10">O</option>
+    						<option value="9">A+</option>
+    						<option value="8">A</option>
+    						<option value="7">B+</option>
+    						<option value="6">B</option>
+    						<option value="5">C</option>
+    						<option value="0">F</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Object Oriented Programming Laboratory
+					</td>
+					<td>
+						<select id="g8" class="form-control form-control-sm">
+							<option value="-1">--Select--</option>
+							<option value="10">O</option>
+    						<option value="9">A+</option>
+    						<option value="8">A</option>
+    						<option value="7">B+</option>
+    						<option value="6">B</option>
+    						<option value="5">C</option>
+    						<option value="0">F</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Analog and Digital Circuits Lab 
+					</td>
+					<td>
+						<select id="g9" class="form-control form-control-sm">
+							<option value="-1">--Select--</option>
+							<option value="10">O</option>
+    						<option value="9">A+</option>
+    						<option value="8">A</option>
+    						<option value="7">B+</option>
+    						<option value="6">B</option>
+    						<option value="5">C</option>
+    						<option value="0">F</option>
+						</select>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="text-center">
+			<button class="btn btn-sm btn-success" onclick="calculateGPA()" data-toggle="modal" data-target="#myModal">Calculate</button>
+		</div>
+		<br>
+		<div id="result2" class="text-danger text-center font-weight-bold"></div>
+	</div>
+	<div class="modal" id="myModal" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Congratulations!!</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body p-4">
+          Your GPA for 3<sup>rd</sup> semester is <strong id="result1"></strong>
+        </div>
+        <div class="modal-footer text-center">
+        	<strong>Stay Happy!!!</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="container-fluid bg-light font-small text-muted" style="position:fixed; bottom:0;">
+    <div class="text-center py-3">
+      &copy; 2021 Copyright:
+      <a href=""> GPA Calculator </a>
+      ||
+      <a href="https://www.linkedin.com/in/meiyazhagan/" target="_blank"> Meiyazhagan</a>
+      ||
+      <a href="https://www.linkedin.com/in/srihariharan-t-37b5901ab/" target="_blank"> Srihariharan</a>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
