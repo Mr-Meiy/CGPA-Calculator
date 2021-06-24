@@ -425,6 +425,46 @@ const overallCGPA = async() => {
             <div>Total Credits: <strong>${creditSum}</strong></div>
             <div><strong>Overall CGPA: ${cgpa.toFixed(2)}</strong></div>
         </div>`;
+    let gpaRes = {
+        gpa1: gpa1,
+        gpa2: gpa2,
+        gpa3: gpa3,
+        gpa4: gpa4,
+        gpa5: gpa5,
+        gpa6: gpa6,
+        gpa7: gpa7,
+        gpa8: gpa8
+    };
+    storeResult(gpaRes, cgpa);
+}
+
+//const verify authorization
+let verifyAuth = () => {
+    const user = localStorage.getItem("user");
+    if (user == null) {
+        alert('Please login to continue');
+        window.location.href = './login.html';
+    }
+}
+
+
+//Store Result
+var storeResult = async(gpa, cgpa) => {
+    let api = 'https://60cf9e924a030f0017f67dc3.mockapi.io/api/zenprojectlist/cgparesults';
+    const currentUser = localStorage.getItem("user");
+    await fetch(projectsApi + 'add', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: currentUser,
+                gpa: gpa,
+                cgpa: cgpa
+            }),
+        })
+        .then(response => response.json())
+        .catch(err => console.log(err));
 }
 
 // Save my page
