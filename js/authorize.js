@@ -1,8 +1,10 @@
 //Authentication
 const authenticate = () => {
     let name = document.getElementById('username').value;
-    localStorage.setItem("user", name);
-    window.location.href = './index.html';
+    if(name!=""){
+      localStorage.setItem("user", name);
+      window.location.href = './index.html';
+    }
 }
 
 //const verify authorization
