@@ -400,24 +400,24 @@ const overallCGPA = async() => {
     let cgpa = gradeSum / creditSum;
 
     document.querySelector(".modal-content").innerHTML = `
-        <div class="modal-header">
-            <h4 class="modal-title">Finally Mr. Engineer!!</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body p-4">
-            <div>Semester 1 : <strong>${gpa1[2].toFixed(2)}</strong></div>
-            <div>Semester 2 : <strong>${gpa2[2].toFixed(2)}</strong></div>
-            <div>Semester 3 : <strong>${gpa3[2].toFixed(2)}</strong></div>
-            <div>Semester 4 : <strong>${gpa4[2].toFixed(2)}</strong></div>
-            <div>Semester 5 : <strong>${gpa5[2].toFixed(2)}</strong></div>
-            <div>Semester 6 : <strong>${gpa6[2].toFixed(2)}</strong></div>
-            <div>Semester 7 : <strong>${gpa7[2].toFixed(2)}</strong></div>
-            <div>Semester 8 : <strong>${gpa8[2].toFixed(2)}</strong></div>
-            <br>
-            <div>Your overall CGPA is <strong>${cgpa.toFixed(2)}</strong></div>
-        </div>
-        <div class="modal-footer text-center">
-            <strong>Stay Happy!!!</strong>
+    //     <div class="modal-header">
+    //         <h4 class="modal-title">Finally Mr. Engineer!!</h4>
+    //         <button type="button" class="close" data-dismiss="modal">&times;</button>
+    //     </div>
+    //     <div class="modal-body p-4">
+    //         <div>Semester 1 : <strong>${gpa1[2].toFixed(2)}</strong></div>
+    //         <div>Semester 2 : <strong>${gpa2[2].toFixed(2)}</strong></div>
+    //         <div>Semester 3 : <strong>${gpa3[2].toFixed(2)}</strong></div>
+    //         <div>Semester 4 : <strong>${gpa4[2].toFixed(2)}</strong></div>
+    //         <div>Semester 5 : <strong>${gpa5[2].toFixed(2)}</strong></div>
+    //         <div>Semester 6 : <strong>${gpa6[2].toFixed(2)}</strong></div>
+    //         <div>Semester 7 : <strong>${gpa7[2].toFixed(2)}</strong></div>
+    //         <div>Semester 8 : <strong>${gpa8[2].toFixed(2)}</strong></div>
+    //         <br>
+    //         <div>Your overall CGPA is <strong>${cgpa.toFixed(2)}</strong></div>
+    //     </div>
+    //     <div class="modal-footer text-center">
+    //         <strong>Stay Happy!!!</strong>
         </div>`;
 
     document.getElementById('CGPAresult').innerHTML = `<div class="alert alert-success">
@@ -435,7 +435,7 @@ const overallCGPA = async() => {
         gpa7: gpa7,
         gpa8: gpa8
     };
-    storeResult(gpaRes, cgpa);
+    storeResult(gpaRes, cgpa.toFixed(2));
 }
 
 //const verify authorization
@@ -452,7 +452,7 @@ let verifyAuth = () => {
 var storeResult = async(gpa, cgpa) => {
     let api = 'https://60cf9e924a030f0017f67dc3.mockapi.io/api/zenprojectlist/cgparesults';
     const currentUser = localStorage.getItem("user");
-    await fetch(projectsApi + 'add', {
+    await fetch(api, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
